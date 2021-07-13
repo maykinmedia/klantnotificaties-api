@@ -4,6 +4,8 @@
 #
 #    ./bin/compile_dependencies.sh
 #
+-e git+git://github.com/maykinmedia/mail-editor@34ee3c9709ac16cf5bf6dee4ea3619c22419b886#egg=mail_editor
+    # via -r requirements/base.txt
 astroid==2.6.2
     # via pylint
 beautifulsoup4==4.9.3
@@ -34,7 +36,12 @@ django-axes==5.20.0
 django-choices==1.7.2
     # via
     #   -r requirements/base.txt
+    #   mail-editor
     #   vng-api-common
+django-ckeditor==6.1.0
+    # via
+    #   -r requirements/base.txt
+    #   mail-editor
 django-cors-middleware==1.5.0
     # via -r requirements/base.txt
 django-filter==2.4.0
@@ -45,6 +52,10 @@ django-ipware==3.0.2
     # via
     #   -r requirements/base.txt
     #   django-axes
+django-js-asset==1.2.2
+    # via
+    #   -r requirements/base.txt
+    #   django-ckeditor
 django-markup==1.5
     # via -r requirements/base.txt
 django-rest-framework-condition==0.1.1
@@ -68,6 +79,7 @@ django==2.2.24
     #   djangorestframework
     #   drf-nested-routers
     #   drf-yasg
+    #   mail-editor
     #   vng-api-common
 djangorestframework-camel-case==1.2.0
     # via
