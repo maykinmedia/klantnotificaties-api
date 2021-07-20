@@ -17,6 +17,7 @@ urlpatterns = [
     path("view-config/", ViewConfigView.as_view(), name="view-config"),
     path("ref/", include("vng_api_common.urls")),
     path("ref/", include("vng_api_common.notifications.urls")),
+    path("mail-editor/", include('mail_editor.urls', namespace='mail_editor')),
 ]
 
 # NOTE: The staticfiles_urlpatterns also discovers static files (ie. no need to run collectstatic). Both the static
