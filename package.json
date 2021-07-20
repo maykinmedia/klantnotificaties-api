@@ -18,9 +18,16 @@
   "license": "EUPL-1.2",
   "homepage": "https://ref.tst.vng.cloud",
   "dependencies": {
+    "cssnano": "^5.0.6",
     "font-awesome": "^4.7.0",
+    "gulp-hub": "^4.2.0",
+    "gulp-if": "^3.0.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sourcemaps": "^3.0.0",
     "html-minifier": "^4.0.0",
-    "inline-css": "^3.0.0"
+    "inline-css": "^3.0.0",
+    "postcss-selector-lint": "^1.0.2",
+    "yargs": "^7.1.2"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
