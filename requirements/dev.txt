@@ -191,7 +191,7 @@ pep8==1.7.1
     # via -r requirements/ci.txt
 pip-tools==6.0.1
     # via -r requirements/dev.in
-psycopg2==2.9.1
+psycopg2==2.8.6
     # via -r requirements/ci.txt
 pyjwt==2.1.0
     # via

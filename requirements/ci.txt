@@ -165,7 +165,7 @@ packaging==21.0
     #   drf-yasg
 pep8==1.7.1
     # via -r requirements/test-tools.in
-psycopg2==2.9.1
+psycopg2==2.8.6
     # via -r requirements/base.txt
 pyjwt==2.1.0
     # via
