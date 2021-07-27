@@ -6,13 +6,14 @@ from rest_framework.permissions import IsAuthenticated
 from vng_api_common.permissions import BaseAuthRequired
 
 from ..datamodel.models import KlantNotificatie
+from .mixins import KlantNotificatieMixin
 from .scopes import EXAMPLE_SCOPE
 from .serializers import KlantNotificatieSerializer
 
 logger = logging.getLogger(__name__)
 
 
-class KlantNotificatieViewSet(mixins.CreateModelMixin, viewsets.ReadOnlyModelViewSet):
+class KlantNotificatieViewSet(KlantNotificatieMixin, mixins.CreateModelMixin, viewsets.ReadOnlyModelViewSet):
     """
     Een KLANTNOTIFICATIE is een bericht dat gestuurd moet worden naar een KLANT,
     via het voorkeurskanaal van de KLANT.

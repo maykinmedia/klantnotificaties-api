@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "django_markup",
     "mail_editor",
+    "zgw_consumers",
     # Project applications.
     "klantnotificaties.accounts",
     "klantnotificaties.api",

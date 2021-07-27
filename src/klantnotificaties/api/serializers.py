@@ -12,5 +12,5 @@ class KlantNotificatieSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = KlantNotificatie
-        fields = ("url", "klant", "productaanvraag", "bericht",)
+        fields = ("url", "klant", "productaanvraag", "bericht", "kanaal",)
         extra_kwargs = {"url": {"lookup_field": "uuid"}}
