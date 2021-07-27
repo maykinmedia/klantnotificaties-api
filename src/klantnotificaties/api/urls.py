@@ -4,10 +4,10 @@ from django.urls import include, path
 from vng_api_common import routers
 from vng_api_common.schema import SchemaView
 
-from .viewsets import ExampleViewSet
+from .viewsets import KlantNotificatieViewSet
 
 router = routers.DefaultRouter()
-router.register("example", ExampleViewSet)
+router.register("klantnotificaties", KlantNotificatieViewSet)
 
 
 # TODO: the EndpointEnumerator seems to choke on path and re_path

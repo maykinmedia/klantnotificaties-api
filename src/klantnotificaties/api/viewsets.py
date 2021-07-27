@@ -1,33 +1,37 @@
 import logging
 
-from rest_framework import viewsets
+from rest_framework import mixins, viewsets
 from vng_api_common.permissions import BaseAuthRequired
 
+from ..datamodel.models import KlantNotificatie
 from .scopes import EXAMPLE_SCOPE
-from .serializers import ExampleSerializer
+from .serializers import KlantNotificatieSerializer
 
 logger = logging.getLogger(__name__)
 
 
-class ExampleViewSet(viewsets.ModelViewSet):
+class KlantNotificatieViewSet(mixins.CreateModelMixin, viewsets.ReadOnlyModelViewSet):
     """
     Describe viewset.
 
     create:
-    Describe create operation.
+    Maak een KLANTNOTIFICATIE aan.
+
+    Maak een KLANTNOTIFICATIE aan.
 
     list:
-    Describe list operation.
+    Alle KLANTNOTIFICATIEs opvragen.
 
-    partial_update:
-    Describe partial_update operation.
+    Alle KLANTNOTIFICATIEs opvragen.
 
-    destroy:
-    Describe destroy operation.
+    retrieve:
+    Een specifieke KLANTNOTIFICATIE opvragen.
+
+    Een specifieke KLANTNOTIFICATIE opvragen.
     """
 
-    queryset = ...
-    serializer_class = ExampleSerializer
+    queryset = KlantNotificatie.objects.all()
+    serializer_class = KlantNotificatieSerializer
     lookup_field = "uuid"
 
     permission_classes = (BaseAuthRequired,)

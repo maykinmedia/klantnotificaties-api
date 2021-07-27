@@ -2,12 +2,15 @@ import logging
 
 from rest_framework import serializers
 
+from ..datamodel.models import KlantNotificatie
+
 
 logger = logging.getLogger(__name__)
 
 
-class ExampleSerializer(serializers.HyperlinkedModelSerializer):
+class KlantNotificatieSerializer(serializers.HyperlinkedModelSerializer):
+
     class Meta:
-        model = ...
-        fields = ("url", ...)
-        extra_kwarsg = {"url": {"lookup_field": "uuid"}}
+        model = KlantNotificatie
+        fields = ("url", "klant", "productaanvraag", "bericht",)
+        extra_kwargs = {"url": {"lookup_field": "uuid"}}
