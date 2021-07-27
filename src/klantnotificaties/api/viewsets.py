@@ -1,6 +1,8 @@
 import logging
 
 from rest_framework import mixins, viewsets
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 from vng_api_common.permissions import BaseAuthRequired
 
 from ..datamodel.models import KlantNotificatie
@@ -12,7 +14,8 @@ logger = logging.getLogger(__name__)
 
 class KlantNotificatieViewSet(mixins.CreateModelMixin, viewsets.ReadOnlyModelViewSet):
     """
-    Describe viewset.
+    Een KLANTNOTIFICATIE is een bericht dat gestuurd moet worden naar een KLANT,
+    via het voorkeurskanaal van de KLANT.
 
     create:
     Maak een KLANTNOTIFICATIE aan.
@@ -34,7 +37,8 @@ class KlantNotificatieViewSet(mixins.CreateModelMixin, viewsets.ReadOnlyModelVie
     serializer_class = KlantNotificatieSerializer
     lookup_field = "uuid"
 
-    permission_classes = (BaseAuthRequired,)
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
     required_scopes = {
         "list": EXAMPLE_SCOPE,
         "retrieve": EXAMPLE_SCOPE,

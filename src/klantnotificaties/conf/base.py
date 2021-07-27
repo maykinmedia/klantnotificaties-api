@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     "vng_api_common.authorizations",
     "drf_yasg",
     "rest_framework",
+    "rest_framework.authtoken",
     "django_markup",
     "mail_editor",
     # Project applications.
