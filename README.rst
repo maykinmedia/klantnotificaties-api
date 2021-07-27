@@ -5,7 +5,7 @@
 :Version: 0.1.0
 :Source: https://github.com/VNG-Realisatie/gemma-klantnotificaties
 :Keywords: zaken, zaakgericht werken, GEMMA
-:PythonVersion: 3.6
+:PythonVersion: 3.7
 
 |build-status|
 
