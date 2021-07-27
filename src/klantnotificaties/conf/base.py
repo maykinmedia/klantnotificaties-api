@@ -261,7 +261,7 @@ SESSION_COOKIE_NAME = "klantnotificaties_sessionid"
 # Custom settings
 #
 SITE_TITLE = "API dashboard"
-PROJECT_NAME = "klantnotificaties"
+PROJECT_NAME = "Klantnotificaties"
 ENVIRONMENT = None
 SHOW_ALERT = True
 

@@ -34,7 +34,7 @@ RUN npm install
 COPY ./Gulpfile.js /app/
 COPY ./build /app/build/
 
-COPY src/{{ project_name|lower }}/sass/ /app/src/{{ project_name|lower }}/sass/
+COPY src/klantnotificaties/sass/ /app/src/klantnotificaties/sass/
 RUN npm run build
 
 
@@ -55,10 +55,10 @@ COPY ./setup.cfg /app/setup.cfg
 COPY ./bin/runtests.sh /runtests.sh
 
 # Stage 3.3 - Copy source code
-COPY --from=frontend-build /app/src/{{ project_name|lower }}/static/fonts /app/src/{{ project_name|lower }}/static/fonts
-COPY --from=frontend-build /app/src/{{ project_name|lower }}/static/css /app/src/{{ project_name|lower }}/static/css
+COPY --from=frontend-build /app/src/klantnotificaties/static/fonts /app/src/klantnotificaties/static/fonts
+COPY --from=frontend-build /app/src/klantnotificaties/static/css /app/src/klantnotificaties/static/css
 COPY ./src /app/src
-RUN mkdir /app/log && rm /app/src/{{ project_name|lower }}/conf/test.py
+RUN mkdir /app/log && rm /app/src/klantnotificaties/conf/test.py
 CMD ["/runtests.sh"]
 
 
@@ -89,11 +89,14 @@ WORKDIR /app
 COPY ./bin/docker_start.sh /start.sh
 RUN mkdir /app/log
 
-COPY --from=frontend-build /app/src/{{ project_name|lower }}/static/fonts /app/src/{{ project_name|lower }}/static/fonts
-COPY --from=frontend-build /app/src/{{ project_name|lower }}/static/css /app/src/{{ project_name|lower }}/static/css
+COPY --from=frontend-build /app/src/klantnotificaties/static/fonts /app/src/klantnotificaties/static/fonts
+COPY --from=frontend-build /app/src/klantnotificaties/static/css /app/src/klantnotificaties/static/css
 COPY ./src /app/src
 
-ENV DJANGO_SETTINGS_MODULE={{ project_name|lower }}.conf.docker
+ENV GIT_SHA=${COMMIT_HASH}
+ENV RELEASE=${RELEASE}
+
+ENV DJANGO_SETTINGS_MODULE=klantnotificaties.conf.docker
 
 ARG SECRET_KEY=dummy
 
