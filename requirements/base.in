@@ -1,5 +1,4 @@
-pip-tools
-psycopg2
+psycopg2<2.9
 python-dotenv
 python-dateutil
 pytz
@@ -15,3 +14,5 @@ django-markup
 
 djangorestframework
 vng-api-common
+
+-e git+git://github.com/maykinmedia/mail-editor@34ee3c9709ac16cf5bf6dee4ea3619c22419b886#egg=mail_editor

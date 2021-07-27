@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     # External applications.
     "axes",
     "django_filters",
+    "ckeditor",
     "corsheaders",
     "vng_api_common",  # before drf_yasg to override the management command
     "vng_api_common.notifications",
@@ -60,6 +61,7 @@ INSTALLED_APPS = [
     "drf_yasg",
     "rest_framework",
     "django_markup",
+    "mail_editor",
     # Project applications.
     "klantnotificaties.accounts",
     "klantnotificaties.api",
@@ -258,7 +260,8 @@ SESSION_COOKIE_NAME = "klantnotificaties_sessionid"
 #
 # Custom settings
 #
-PROJECT_NAME = "klantnotificaties"
+SITE_TITLE = "API dashboard"
+PROJECT_NAME = "Klantnotificaties"
 ENVIRONMENT = None
 SHOW_ALERT = True
 
@@ -316,3 +319,5 @@ if SENTRY_DSN:
             }
         }
     )
+
+from .mail_editor import *  # noqa isort:skip

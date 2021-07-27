@@ -5,6 +5,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import include, path
 from django.views.generic.base import TemplateView
 
+from vng_api_common.views import ViewConfigView
+
 handler500 = "klantnotificaties.utils.views.server_error"
 
 urlpatterns = [
@@ -12,8 +14,10 @@ urlpatterns = [
     path("api/", include("klantnotificaties.api.urls")),
     # Simply show the master template.
     path("", TemplateView.as_view(template_name="index.html")),
+    path("view-config/", ViewConfigView.as_view(), name="view-config"),
     path("ref/", include("vng_api_common.urls")),
     path("ref/", include("vng_api_common.notifications.urls")),
+    path("mail-editor/", include('mail_editor.urls', namespace='mail_editor')),
 ]
 
 # NOTE: The staticfiles_urlpatterns also discovers static files (ie. no need to run collectstatic). Both the static
