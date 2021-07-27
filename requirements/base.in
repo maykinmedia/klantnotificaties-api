@@ -14,5 +14,6 @@ django-markup
 
 djangorestframework
 vng-api-common
+zgw_consumers
 
 -e git+git://github.com/maykinmedia/mail-editor@34ee3c9709ac16cf5bf6dee4ea3619c22419b886#egg=mail_editor
