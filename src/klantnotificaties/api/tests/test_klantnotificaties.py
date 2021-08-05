@@ -1,6 +1,7 @@
 from unittest import skip
 
 import requests_mock
+from django.conf import settings
 from django.core import mail
 from rest_framework import status
 from rest_framework.test import APITestCase
@@ -28,6 +29,7 @@ class KlantNotificatiesTestCase(APITestCase):
     @requests_mock.Mocker()
     def test_klantnotificatie_create_success_email_channel(self, m):
         mock_service_oas_get(m, "http://klanten.nl/api/v1/", "klanten")
+        mock_service_oas_get(m, settings.KLANTEN_API_SPEC, "klanten", oas_url=settings.KLANTEN_API_SPEC)
 
         m.get(
             "http://klanten.nl/api/v1/klanten/1",
