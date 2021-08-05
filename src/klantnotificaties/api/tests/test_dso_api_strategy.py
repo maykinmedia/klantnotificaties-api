@@ -1,4 +1,5 @@
 from django.test import override_settings
+from django.utils.translation import gettext as _
 
 from rest_framework.test import APIRequestFactory, APITestCase
 from vng_api_common.tests import reverse
@@ -64,7 +65,7 @@ class DSOApi50Tests(APITestCase):
                 "title": "Invalid input.",
                 "status": 400,
                 "detail": "",
-                "invalid-params": [
+                "invalid_params": [
                     {
                         "name": "foo",
                         "code": "validation-error",
@@ -134,7 +135,7 @@ class DSOApi50Tests(APITestCase):
             views.ConflictView,
             {
                 "code": "conflict",
-                "title": "A conflict occurred",
+                "title": "Er is een conflict",
                 "status": 409,
                 "detail": "The resource was updated, please retrieve it again",
             },
@@ -145,7 +146,7 @@ class DSOApi50Tests(APITestCase):
             views.GoneView,
             {
                 "code": "gone",
-                "title": "The resource is gone",
+                "title": _("The resource is gone"),
                 "status": 410,
                 "detail": "The resource was destroyed",
             },
@@ -156,7 +157,7 @@ class DSOApi50Tests(APITestCase):
             views.PreconditionFailed,
             {
                 "code": "precondition_failed",
-                "title": "Precondition failed",
+                "title": _("Precondition failed"),
                 "status": 412,
                 "detail": "Something about CRS",
             },
