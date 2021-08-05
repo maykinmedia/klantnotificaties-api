@@ -29,3 +29,10 @@ SWAGGER_SETTINGS.update(
 )
 
 GEMMA_URL_INFORMATIEMODEL_VERSIE = "1.0"
+
+# API spec links for resource validation
+repo = "vng-Realisatie/klanten-api"
+commit = "16458270233b2f3a350b1eeca3331d9acf5d19f8"
+KLANTEN_API_SPEC = (
+    f"https://raw.githubusercontent.com/{repo}/{commit}/src/openapi.yaml"
+)
