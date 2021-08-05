@@ -83,13 +83,6 @@
                 },
                 "tags": [
                     "klantnotificaties"
-                ],
-                "security": [
-                    {
-                        "JWT-Claims": [
-                            "zds.scopes.domain.example"
-                        ]
-                    }
                 ]
             },
             "post": {
@@ -168,13 +161,6 @@
                 },
                 "tags": [
                     "klantnotificaties"
-                ],
-                "security": [
-                    {
-                        "JWT-Claims": [
-                            "zds.scopes.domain.example"
-                        ]
-                    }
                 ]
             },
             "parameters": []
@@ -252,13 +238,6 @@
                 },
                 "tags": [
                     "klantnotificaties"
-                ],
-                "security": [
-                    {
-                        "JWT-Claims": [
-                            "zds.scopes.domain.example"
-                        ]
-                    }
                 ]
             },
             "parameters": [
@@ -278,7 +257,8 @@
             "required": [
                 "klant",
                 "productaanvraag",
-                "bericht"
+                "bericht",
+                "kanaal"
             ],
             "type": "object",
             "properties": {
@@ -312,6 +292,15 @@
                     "description": "Het bericht voor de klant",
                     "type": "string",
                     "minLength": 1
+                },
+                "kanaal": {
+                    "title": "Kanaal",
+                    "description": "Het kanaal waarlangs het bericht naar de klant gestuurd moet worden",
+                    "type": "string",
+                    "enum": [
+                        "email",
+                        "sms"
+                    ]
                 }
             }
         },

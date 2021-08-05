@@ -74,9 +74,6 @@ paths:
           $ref: '#/components/responses/500'
       tags:
       - klantnotificaties
-      security:
-      - JWT-Claims:
-        - zds.scopes.domain.example
     post:
       operationId: klantnotificatie_create
       summary: Maak een KLANTNOTIFICATIE aan.
@@ -134,9 +131,6 @@ paths:
           $ref: '#/components/responses/500'
       tags:
       - klantnotificaties
-      security:
-      - JWT-Claims:
-        - zds.scopes.domain.example
     parameters: []
   /klantnotificaties/{uuid}:
     get:
@@ -201,9 +195,6 @@ paths:
           $ref: '#/components/responses/500'
       tags:
       - klantnotificaties
-      security:
-      - JWT-Claims:
-        - zds.scopes.domain.example
     parameters:
     - name: uuid
       in: path
@@ -362,6 +353,7 @@ components:
       - klant
       - productaanvraag
       - bericht
+      - kanaal
       type: object
       properties:
         url:
@@ -393,6 +385,14 @@ components:
           description: Het bericht voor de klant
           type: string
           minLength: 1
+        kanaal:
+          title: Kanaal
+          description: Het kanaal waarlangs het bericht naar de klant gestuurd moet
+            worden
+          type: string
+          enum:
+          - email
+          - sms
     Fout:
       required:
       - code
