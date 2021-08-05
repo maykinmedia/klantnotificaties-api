@@ -324,4 +324,13 @@ if SENTRY_DSN:
         }
     )
 
+
+#
+# ZGW Consumers
+#
+ZGW_CONSUMERS_TEST_SCHEMA_DIRS = [
+    os.path.join(BASE_DIR, "src/klantnotificaties/api/tests/files"),
+]
+
+
 from .mail_editor import *  # noqa isort:skip
