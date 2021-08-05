@@ -30,6 +30,11 @@ LOGGING["loggers"].update(
             "propagate": True,
         },
         "django": {"handlers": ["console"], "level": "DEBUG", "propagate": True},
+        "django.utils.autoreload": {
+            "handlers": ["console"],
+            "level": "INFO",
+            "propagate": False,
+        },
         "django.db.backends": {
             "handlers": ["django"],
             "level": "DEBUG",

@@ -9,7 +9,7 @@
 
 |build-status|
 
-Referentieimplementatie van de klantnotificaties (ABBREVIATION).
+Implementatie van de Klantnotificaties API.
 
 Inleiding
 =========

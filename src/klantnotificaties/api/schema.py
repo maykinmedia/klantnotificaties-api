@@ -2,9 +2,10 @@ from django.conf import settings
 
 from drf_yasg import openapi
 
-description = """Een API om een klantnotificaties te benaderen.
+description = """Een API om een Klantnotificaties aan te maken.
 
-DESCRIBE API HERE
+Deze API kan aangeroepen worden door andere systemen, om bijvoorbeeld emails naar
+klanten te versturen.
 
 **Autorisatie**
 
@@ -19,7 +20,7 @@ genereren.
 """
 
 info = openapi.Info(
-    title="klantnotificaties (ABBREVIATION) API",
+    title="Klantnotificaties API",
     default_version=settings.API_VERSION,
     description=description,
     contact=openapi.Contact(

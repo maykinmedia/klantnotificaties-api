@@ -60,11 +60,15 @@ INSTALLED_APPS = [
     "vng_api_common.authorizations",
     "drf_yasg",
     "rest_framework",
+    "rest_framework.authtoken",
     "django_markup",
+    "solo",
     "mail_editor",
+    "zgw_consumers",
     # Project applications.
     "klantnotificaties.accounts",
     "klantnotificaties.api",
+    "klantnotificaties.config",
     "klantnotificaties.datamodel",
     "klantnotificaties.utils",
 ]
@@ -319,5 +323,14 @@ if SENTRY_DSN:
             }
         }
     )
+
+
+#
+# ZGW Consumers
+#
+ZGW_CONSUMERS_TEST_SCHEMA_DIRS = [
+    os.path.join(BASE_DIR, "src/klantnotificaties/api/tests/files"),
+]
+
 
 from .mail_editor import *  # noqa isort:skip

@@ -23,6 +23,7 @@ django-choices==1.7.2
     #   -r requirements/base.in
     #   mail-editor
     #   vng-api-common
+    #   zgw-consumers
 django-ckeditor==6.1.0
     # via mail-editor
 django-cors-middleware==1.5.0
@@ -35,10 +36,15 @@ django-js-asset==1.2.2
     # via django-ckeditor
 django-markup==1.5
     # via -r requirements/base.in
+django-relativedelta==1.1.2
+    # via zgw-consumers
 django-rest-framework-condition==0.1.1
     # via vng-api-common
 django-solo==1.1.5
-    # via vng-api-common
+    # via
+    #   -r requirements/base.in
+    #   vng-api-common
+    #   zgw-consumers
 django==2.2.24
     # via
     #   -r requirements/base.in
@@ -46,12 +52,14 @@ django==2.2.24
     #   django-choices
     #   django-filter
     #   django-markup
+    #   django-relativedelta
     #   django-rest-framework-condition
     #   djangorestframework
     #   drf-nested-routers
     #   drf-yasg
     #   mail-editor
     #   vng-api-common
+    #   zgw-consumers
 djangorestframework-camel-case==1.2.0
     # via vng-api-common
 djangorestframework==3.12.4
@@ -64,8 +72,12 @@ drf-nested-routers==0.93.3
     # via vng-api-common
 drf-yasg==1.20.0
     # via vng-api-common
+faker==8.10.3
+    # via zgw-consumers
 gemma-zds-client==1.0.0
-    # via vng-api-common
+    # via
+    #   vng-api-common
+    #   zgw-consumers
 idna==2.10
     # via requests
 importlib-metadata==4.6.1
@@ -97,7 +109,10 @@ pyjwt==2.1.0
 pyparsing==2.4.7
     # via packaging
 python-dateutil==2.8.1
-    # via -r requirements/base.in
+    # via
+    #   -r requirements/base.in
+    #   django-relativedelta
+    #   faker
 python-dotenv==0.18.0
     # via -r requirements/base.in
 pytz==2021.1
@@ -111,11 +126,15 @@ pyyaml==5.4.1
     #   vng-api-common
 raven==6.10.0
     # via -r requirements/base.in
+requests-mock==1.9.3
+    # via zgw-consumers
 requests==2.25.1
     # via
     #   coreapi
     #   gemma-zds-client
+    #   requests-mock
     #   vng-api-common
+    #   zgw-consumers
 ruamel.yaml.clib==0.2.6
     # via ruamel.yaml
 ruamel.yaml==0.17.10
@@ -125,8 +144,11 @@ six==1.16.0
     #   django-choices
     #   isodate
     #   python-dateutil
+    #   requests-mock
 sqlparse==0.4.1
     # via django
+text-unidecode==1.3
+    # via faker
 typing-extensions==3.10.0.0
     # via importlib-metadata
 unidecode==1.2.0
@@ -140,6 +162,8 @@ urllib3==1.26.6
 uwsgi==2.0.19.1
     # via -r requirements/base.in
 vng-api-common==1.6.2
+    # via -r requirements/base.in
+zgw-consumers==0.15.2
     # via -r requirements/base.in
 zipp==3.5.0
     # via importlib-metadata
