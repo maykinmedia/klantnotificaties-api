@@ -42,6 +42,7 @@ django-rest-framework-condition==0.1.1
     # via vng-api-common
 django-solo==1.1.5
     # via
+    #   -r requirements/base.in
     #   vng-api-common
     #   zgw-consumers
 django==2.2.24
